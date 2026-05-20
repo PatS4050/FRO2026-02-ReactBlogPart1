@@ -11,15 +11,15 @@ function Navigation() {
                 <li><NavLink to="/"
                              className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Home</NavLink>
                 </li>
-                <li><NavLink to="/newpost"
-                             className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Newpost</NavLink>
-                </li>
                 <li><NavLink to="/overzicht"
                              className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Alle
                     posts</NavLink></li>
-                <li>
-                    <button type="button">Nieuwe Post</button>
+                <li><NavLink to="/newpost"
+                             className={({isActive}) => isActive === true ? 'active-link' : 'default-link'}>Nieuwe post maken</NavLink>
                 </li>
+                {/*<li>*/}
+                {/*    <button type="button">Nieuwe Post</button>*/}
+                {/*</li>*/}
             </ul>
         </nav>
     )

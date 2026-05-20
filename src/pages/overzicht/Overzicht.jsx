@@ -1,4 +1,4 @@
-import './Overzicht.css'
+import './Overzicht.css';
 
 function Overzicht() {
     return (
