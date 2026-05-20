@@ -1,0 +1,54 @@
+nav{
+    background-color: black;
+    color: white;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: small;
+    padding:3px 42px;
+}
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap:42px;
+}
+nav img{
+    width: 18px;
+}
+nav ul a{
+    color:white;
+    display:flex;
+    flex-direction: row;
+    justify-content: end;
+    justify-items: center;
+    text-decoration: none;
+
+}
+nav ul a:visited {
+    color: 38E991;
+    text-decoration: none;
+
+}
+.default-link {
+    border-bottom: 1px solid transparent;
+}
+.active-link {
+    color: #38E991;
+    border-bottom: 1px solid #38E991;
+}
+  nav span {
+    align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 13px;
+    font-size: small;
+}
+
+.navbar-three li {
+    list-style: none;
+    font-size: small;
+}
