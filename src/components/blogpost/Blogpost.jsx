@@ -1,14 +1,26 @@
 import './Blogpost.css';
-import { useParams } from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
+import posts from '../../constants/data.json';
+
 
 
 function Blogpost() {
-    let {blogpost} = useParams();
+    const {id} = useParams();
+    console.log(posts)
 
 
     return (
         <>
-            <article>De blog is {blogpost}</article>
+
+            <article>
+                <h1>{posts.title}</h1>
+                <h3>{posts.subtitle}</h3>
+                <p>Geschreven door {posts.author}</p>
+                <p>{posts.content}</p>
+                <p>{posts.comments} reacties - {posts.shares} keer gedeeld</p>
+                <p>terug naar de <Link to={}>overzichtspagina</Link>Link> </p>
+
+            </article>
         </>
 
     )

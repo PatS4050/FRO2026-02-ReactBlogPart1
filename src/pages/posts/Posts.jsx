@@ -1,21 +1,29 @@
 import './Posts.css';
 import {Link} from "react-router-dom";
+import posts from '../../constants/data.json';
 
-const stories= [
-    {blogpost:1, name:"test1"},
-    {blogpost:2, name:"test2"},
-    {blogpost:3, name:"test3"},
-];
 
+// const stories= [
+//     {blogpost:1, name:"test1"},
+//     {blogpost:2, name:"test2"},
+//     {blogpost:3, name:"test3"},
+// ];
+
+console.log(posts)
 
 function Posts() {
     return (
         <div className="overzichtPage">
             <h1>Overzicht</h1>
-            {stories.map((story) => (
-                <article key={stories.blogpost}>
-                    <Link to={`/overzicht/${story.blogpost}`}>
-                        {story.name}
+            {posts.map((post) => (
+                <article key={post.id}>
+                    <Link to={`/overzicht/${post.id}`}>
+                        <article>
+                            {/*{post.title}, ({post.author})*/}
+                            {/*{post.comments} reacties - {post.shares} keer gedeeld*/}
+                            <p>{post.title}, ({post.author})</p>
+                            <p>{post.comments} reacties - {post.shares} keer gedeeld</p>
+                        </article>
                     </Link>
                 </article>
                 ))}
