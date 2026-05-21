@@ -3,11 +3,13 @@ import { useParams } from "react-router-dom";
 
 
 function Blogpost() {
-    const {blogpost} = useParams();
+    let {blogpost} = useParams();
 
 
     return (
-        <article>De blog is {blogpost}</article>
+        <>
+            <article>De blog is {blogpost}</article>
+        </>
 
     )
 }
