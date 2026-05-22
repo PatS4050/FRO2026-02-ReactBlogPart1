@@ -7,6 +7,7 @@ import Pagina404 from "./pages/pagina404/Pagina404.jsx";
 import Posts from "./pages/posts/Posts.jsx";
 import Newpost from "./pages/newpost/Newpost.jsx";
 import Navigation from "./components/navigation/Navigation.jsx"
+import Blogpost from "./components/blogpost/Blogpost.jsx";
 
 function App() {
     return (
@@ -15,8 +16,9 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/newpost" element={<Newpost/>}/>
-                <Route path="/posts/:id" element={<Posts/>}/>
+                <Route path="/posts" element={<Posts/>}/>
                 <Route path="*" element={<Pagina404/>}/>
+                <Route path="/posts/:id" element={<Blogpost/>}/>
             </Routes>
             <footer><p>footer</p></footer>
         </>

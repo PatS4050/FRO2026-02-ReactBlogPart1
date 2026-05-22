@@ -17,7 +17,7 @@ function Posts() {
             <h1>Overzicht</h1>
             {posts.map((post) => (
                 <article key={post.id}>
-                    <Link to={`/overzicht/${post.id}`}>
+                    <Link to={`/posts/${post.id}`}>
                         <article>
                             {/*{post.title}, ({post.author})*/}
                             {/*{post.comments} reacties - {post.shares} keer gedeeld*/}
@@ -27,8 +27,6 @@ function Posts() {
                     </Link>
                 </article>
                 ))}
-
-
         </div>
     );
 }
