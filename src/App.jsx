@@ -7,7 +7,7 @@ import Pagina404 from "./pages/pagina404/Pagina404.jsx";
 import Posts from "./pages/posts/Posts.jsx";
 import Newpost from "./pages/newpost/NewPost.jsx";
 import Navigation from "./components/navigation/Navigation.jsx"
-import Blogpost from "./components/blogpost/Blogpost.jsx";
+import Blogpost from "./pages/blogpost/Blogpost.jsx";
 
 function App() {
     return (

@@ -2,6 +2,7 @@ import './NewPost.css'
 import React, { useState } from 'react';
 import InputField from '../../components/InputField.jsx';
 import Button from "../../components/Button.jsx";
+import calcReadTime from "../../helpers/calcReadTime.jsx";
 
 function NewPost() {
 
@@ -16,7 +17,7 @@ function NewPost() {
         const event = new Date();
 
         e.preventDefault();
-        console.log({...formState, created:event.toISOString(), comments:0, shares:0});
+        console.log({...formState, created:event.toISOString(), comments:0, shares:0, readTime:calcReadTime(formState.content)});
     }
 
     function handleChange(e) {
@@ -65,7 +66,7 @@ function NewPost() {
                     onChange={handleChange}
                     rows="12"
                     cols="42"
-                    minLength={300}
+                    // minLength={300}
                     maxLength={2000}
                 >je verhaal</textarea>
                 <Button
