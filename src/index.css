@@ -12,6 +12,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+ol, ul {
+  list-style: none;
+}
 
 body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -54,4 +57,9 @@ h4 {
 
 p {
   margin-block: 0.5em;
+}
+article {
+  border:1px solid lightslategray;
+  padding:3px 42px;
+  text-decoration: none;
 }
