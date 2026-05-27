@@ -5,7 +5,7 @@ import logo from './assets/logo-white.png';
 import Home from './pages/home/Home.jsx';
 import Pagina404 from "./pages/pagina404/Pagina404.jsx";
 import Posts from "./pages/posts/Posts.jsx";
-import Newpost from "./pages/newpost/Newpost.jsx";
+import Newpost from "./pages/newpost/NewPost.jsx";
 import Navigation from "./components/navigation/Navigation.jsx"
 import Blogpost from "./components/blogpost/Blogpost.jsx";
 
