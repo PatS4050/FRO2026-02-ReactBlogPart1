@@ -1,6 +1,7 @@
 import './Posts.css';
 import {Link} from "react-router-dom";
 import posts from '../../constants/data.json';
+import {useEffect, useState} from "react";
 
 
 // const stories= [
@@ -9,9 +10,15 @@ import posts from '../../constants/data.json';
 //     {blogpost:3, name:"test3"},
 // ];
 
-console.log(posts)
+// console.log(posts)
 
 function Posts() {
+    const[allBlogPosts, setAllBlogPosts] = useState({})
+
+    useEffect(() => {
+        setAllBlogPosts(posts);
+        console.log('Het laden van de database is gelukt', setAllBlogPosts)
+    }, []);
     return (
         <div className="overzichtPage">
             <h1>Overzicht</h1>
