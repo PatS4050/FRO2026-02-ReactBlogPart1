@@ -1,7 +1,7 @@
 import './NewPost.css'
 import React, { useState } from 'react';
-import InputField from '../../components/InputField.jsx';
-import Button from "../../components/Button.jsx";
+import InputField from '../../components/inputField/InputField.jsx';
+import Button from "../../components/button/Button.jsx";
 import calcReadTime from "../../helpers/calcReadTime.jsx";
 import axios from "axios";
 

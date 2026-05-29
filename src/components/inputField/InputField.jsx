@@ -1,3 +1,4 @@
+import './inputField.css'
 import React from 'react';
 
 function InputField({ name, inputType, label, value, changeHandler}) {
