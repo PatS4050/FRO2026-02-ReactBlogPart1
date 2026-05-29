@@ -20,7 +20,7 @@ function App() {
                 <Route path="*" element={<Pagina404/>}/>
                 <Route path="/posts/:id" element={<Blogpost/>}/>
             </Routes>
-            <footer><p>footer</p></footer>
+            {/*<footer><p>footer</p></footer>*/}
         </>
 
     )

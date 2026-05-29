@@ -3,8 +3,11 @@ import React, { useState } from 'react';
 import InputField from '../../components/InputField.jsx';
 import Button from "../../components/Button.jsx";
 import calcReadTime from "../../helpers/calcReadTime.jsx";
+import axios from "axios";
 
 function NewPost() {
+    const linkApi = 'https://novi-backend-api-wgsgz.ondigitalocean.app/api/blogposts';
+    //project id = 'novi-education-project-id': 'c28ee213-3929-411e-8859-3b773da0246e'
 
     const [formState, setFormState] = useState({
         author: '',
@@ -13,11 +16,32 @@ function NewPost() {
         title: '',
     })
 
-    function handleSubmit(e) {
-        const event = new Date();
+    const [error, toggleError] = useState(false);
+    const [loading, toggleLoading] = useState(false);
 
+    async function handleSubmit(e) {
+        const event = new Date();
         e.preventDefault();
+        toggleError(false)
+        toggleLoading(true)
+
         console.log({...formState, created:event.toISOString(), comments:0, shares:0, readTime:calcReadTime(formState.content)});
+    try {
+        const response = await axios.post(linkApi, {
+            ...formState,
+            created:event.toISOString(),
+            comments:0,
+            shares: 0,
+            readTime:calcReadTime(formState.content)
+            }, {
+            headers: {'novi-education-project-id': 'c28ee213-3929-411e-8859-3b773da0246e'}})
+    } catch (e) {
+        toggleError(true)
+        console.error(e);
+    }
+    finally {
+        toggleLoading(false);
+    }
     }
 
     function handleChange(e) {
@@ -25,7 +49,6 @@ function NewPost() {
         setFormState({
             ...formState,
                 [changedFieldName]: e.target.value,
-
         });
 
     }
@@ -66,7 +89,7 @@ function NewPost() {
                     onChange={handleChange}
                     rows="12"
                     cols="42"
-                    // minLength={300}
+                    minLength={300}
                     maxLength={2000}
                 >je verhaal</textarea>
                 <Button
@@ -74,6 +97,8 @@ function NewPost() {
 
                 >Verzend</Button>
             </form>
+                {error && <ErrorMessage
+                    message="Er is iets misgegaan. Probeer het opnieuw"/>}
             </section>
 
         </div>

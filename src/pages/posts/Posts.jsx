@@ -4,14 +4,6 @@ import {Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
 
-
-// const stories= [
-//     {blogpost:1, name:"test1"},
-//     {blogpost:2, name:"test2"},
-//     {blogpost:3, name:"test3"},
-// ];
-
-// console.log(posts)
 const linkApi = 'https://novi-backend-api-wgsgz.ondigitalocean.app/api/blogposts';
 //project id = 'novi-education-project-id': 'c28ee213-3929-411e-8859-3b773da0246e'
 
@@ -30,10 +22,9 @@ function Posts() {
             const responsePosts = await axios.get(linkApi, {
                 headers: {
                     'novi-education-project-id': 'c28ee213-3929-411e-8859-3b773da0246e'
-                }
-            });
-            setAllBlogPosts(responsePosts)
-            console.log("data is opgehaald")
+                }});
+            setAllBlogPosts(responsePosts.data);
+            console.log("data is opgehaald", responsePosts);
         } catch (e) {
             toggleError(true)
             console.error(e);
@@ -43,7 +34,6 @@ function Posts() {
         }
     }
 
-
     useEffect(() => {
         void fetchBlogPosts()
     }, []);
@@ -51,18 +41,19 @@ function Posts() {
     return (
         <div className="overzichtPage">
             <h1>Overzicht</h1>
+
+
             {allBlogPosts.map((post) => (
                 <article key={post.id}>
                     <Link to={`/posts/${post.id}`}>
                         <article>
-                            {/*{post.title}, ({post.author})*/}
-                            {/*{post.comments} reacties - {post.shares} keer gedeeld*/}
                             <p>{post.title}, ({post.author})</p>
                             <p>{post.comments} reacties - {post.shares} keer gedeeld</p>
                         </article>
                     </Link>
                 </article>
-                ))}
+                ))};
+            {error && <h2> Er is iets misgegaan</h2>}
         </div>
     );
 }
