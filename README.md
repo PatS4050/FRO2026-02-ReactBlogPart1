@@ -59,7 +59,7 @@ de webpagina.
 De blog-applicatie heeft op dit moment nog geen routing-structuur en ook geen pagina's. Tijd om daar verandering in te
 brengen! Maak zelf 4 pagina-componenten aan met een passende routing-structuur:
 
-* Home pagina
+* Newpost pagina
 * Nieuwe post pagina (om een nieuwe blog te starten)
 * Overzichtspagina (om alle blogs te bekijken)
 * Een 404-pagina (om foute url's af te vangen)
@@ -73,7 +73,7 @@ Uiteraard test je goed of alles werkt, door handmatig de url in de adresbalk te 
 Naast het feit dat er content op de pagina's moet komen te staan - hier komen we in opdracht 2 op terug - zul je ook
 moeten zorgen voor een goed werkende menu-balk met daarin de links naar:
 
-* 'Home'
+* 'Newpost'
 * 'Alle posts'
 * 'Nieuwe post'
 
